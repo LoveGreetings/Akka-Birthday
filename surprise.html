@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Final Surprise 🎁 | Happy Birthday Akka</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Rising Balloons Animation for Phase 4 */
+    .rising-balloons-screen {
+      position: fixed;
+      bottom: -150px;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 880;
+    }
+
+    .balloon-riser {
+      position: absolute;
+      width: 60px;
+      height: 80px;
+      border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+      box-shadow: inset -6px -6px 12px rgba(0,0,0,0.1), 0 10px 25px rgba(236, 72, 153, 0.3);
+      animation: modernBalloonRise 8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    }
+
+    .balloon-riser::after {
+      content: "";
+      position: absolute;
+      bottom: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 40px;
+      background: rgba(100, 116, 139, 0.4);
+    }
+
+    @keyframes modernBalloonRise {
+      0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+      15% { opacity: 1; }
+      100% { transform: translateY(-120vh) rotate(18deg); opacity: 0.95; }
+    }
+
+    .surprise-blessing-card {
+      background: rgba(255, 255, 255, 0.85);
+      border: 1.5px solid var(--glass-border);
+      border-radius: 24px;
+      padding: 30px 24px;
+      box-shadow: 0 15px 35px rgba(236, 72, 153, 0.12);
+      margin: 25px auto;
+      max-width: 620px;
+    }
+
+    .surprise-thambi-tag {
+      font-family: var(--font-handwriting);
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-top: 25px;
+    }
+
+    .surprise-actions-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 35px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Page Transition Curtain -->
+  <div class="page-transition-curtain"></div>
+
+  <!-- Background Animated Gradient Blobs -->
+  <div class="ambient-blobs" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="blob blob-4"></div>
+  </div>
+
+  <!-- Ambient Particles & Fireworks Canvases -->
+  <canvas id="particleCanvas"></canvas>
+  <canvas id="fireworkCanvas"></canvas>
+
+  <!-- Navigation Bar -->
+  <nav class="main-nav">
+    <a href="index.html" class="nav-brand">
+      <span class="nav-brand-icon">✨</span>
+      Akka's Day
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link">🏠 Home</a></li>
+      <li><a href="birthday.html" class="nav-link">🎂 Birthday</a></li>
+      <li><a href="message.html" class="nav-link">💌 Message</a></li>
+      <li><a href="surprise.html" class="nav-link active">🎁 Surprise</a></li>
+    </ul>
+
+    <button class="mobile-menu-btn" aria-label="Open Navigation Menu">☰</button>
+  </nav>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-backdrop"></div>
+  <div class="mobile-nav-drawer">
+    <button class="mobile-drawer-close" aria-label="Close Navigation Menu">✕</button>
+    <a href="index.html" class="nav-link">🏠 Home</a>
+    <a href="birthday.html" class="nav-link">🎂 Birthday</a>
+    <a href="message.html" class="nav-link">💌 Message</a>
+    <a href="surprise.html" class="nav-link active">🎁 Surprise</a>
+  </div>
+
+  <!-- Main Surprise Stage -->
+  <main class="page-wrapper">
+    <div class="surprise-container">
+
+      <!-- INITIAL TEASER STATE (Animated Mystery Gift Box) -->
+      <div class="glass-card teaser-box">
+        <span class="badge-pill">👀 The Grand Finale</span>
+
+        <!-- Live Date & Day Badge -->
+        <div>
+          <div class="today-date-badge">
+            <span class="live-date-text">📅 <strong>Tuesday, November 10</strong> • Akka's Special Day ✨</span>
+          </div>
+        </div>
+
+        <h1 class="title-large" style="margin-bottom: 20px;">Wait… one last thing 👀</h1>
+
+        <!-- Festive Party Celebration Image -->
+        <div class="festive-photo-frame">
+          <img src="assets/party.gif" alt="Festive Party Celebration & Confetti" class="festive-photo-img">
+        </div>
+
+        <div class="mystery-gift-box">
+          <svg class="gift-box-svg" viewBox="0 0 200 200">
+            <defs>
+              <linearGradient id="boxGradS" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#f472b6"/>
+                <stop offset="50%" stop-color="#ec4899"/>
+                <stop offset="100%" stop-color="#db2777"/>
+              </linearGradient>
+              <linearGradient id="ribbonGradS" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#fef08a"/>
+                <stop offset="50%" stop-color="#fbbf24"/>
+                <stop offset="100%" stop-color="#f59e0b"/>
+              </linearGradient>
+              <linearGradient id="lidGradS" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#fb7185"/>
+                <stop offset="100%" stop-color="#e11d48"/>
+              </linearGradient>
+            </defs>
+            <rect x="40" y="80" width="120" height="95" rx="16" fill="url(#boxGradS)"/>
+            <rect x="88" y="80" width="24" height="95" fill="url(#ribbonGradS)"/>
+            <rect x="32" y="62" width="136" height="26" rx="8" fill="url(#lidGradS)"/>
+            <rect x="88" y="62" width="24" height="26" fill="url(#ribbonGradS)"/>
+            <path d="M100,62 C85,35 60,35 75,55 C88,68 100,62 100,62 Z" fill="url(#ribbonGradS)"/>
+            <path d="M100,62 C115,35 140,35 125,55 C112,68 100,62 100,62 Z" fill="url(#ribbonGradS)"/>
+            <circle cx="100" cy="62" r="8" fill="#fef08a"/>
+            <polygon points="30,40 33,48 41,51 33,54 30,62 27,54 19,51 27,48" fill="#fbbf24"/>
+            <polygon points="170,110 172,116 178,118 172,120 170,126 168,120 162,118 168,116" fill="#fbbf24"/>
+          </svg>
+        </div>
+
+        <div style="margin-top: 30px;">
+          <button id="openFinalSurpriseBtn" class="btn-modern-primary">
+            <span>🎁 Open It</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 8-STEP GRAND REVEAL CONTENT -->
+      <div class="glass-card grand-reveal-card">
+
+        <!-- Celebratory Badges -->
+        <div class="grand-badges-row">
+          <span class="badge-pill">👑 Queen of Our Hearts</span>
+          <span class="badge-pill">✨ Best Akka in the World</span>
+          <span class="badge-pill">💖 Forever Supporter</span>
+        </div>
+
+        <!-- Large Grand Heading -->
+        <h1 class="title-large" style="font-size: clamp(2.4rem, 6vw, 4.2rem); margin-top: 15px;">
+          🎉 HAPPY BIRTHDAY AKKA! 🎉
+        </h1>
+
+        <h2 style="font-size: 1.5rem; color: #8b5cf6; margin-bottom: 20px;">
+          Wishing you the happiest year ahead! ✨
+        </h2>
+
+        <!-- Featured Cake Celebration Photo Frame -->
+        <div class="festive-photo-frame" style="max-width: 440px; margin-bottom: 25px;">
+          <img src="assets/cake.gif" alt="Delicious Birthday Cake Celebration" class="festive-photo-img">
+        </div>
+
+        <!-- Celebratory Cake SVG -->
+        <div style="display: flex; justify-content: center; margin: 20px auto;">
+          <svg class="cake-svg-interactive" viewBox="0 0 320 280" style="max-width: 250px;">
+            <defs>
+              <linearGradient id="standGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#fbcfe8"/>
+                <stop offset="50%" stop-color="#ffffff"/>
+                <stop offset="100%" stop-color="#e9d5ff"/>
+              </linearGradient>
+              <linearGradient id="tier1Grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#f472b6"/>
+                <stop offset="50%" stop-color="#ec4899"/>
+                <stop offset="100%" stop-color="#db2777"/>
+              </linearGradient>
+              <linearGradient id="tier2Grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#fed7aa"/>
+                <stop offset="50%" stop-color="#ffffff"/>
+                <stop offset="100%" stop-color="#fbcfe8"/>
+              </linearGradient>
+              <radialGradient id="sparkleFlame" cx="50%" cy="80%" r="70%">
+                <stop offset="0%" stop-color="#ffffff"/>
+                <stop offset="30%" stop-color="#fef08a"/>
+                <stop offset="70%" stop-color="#fb923c"/>
+                <stop offset="100%" stop-color="#ef4444"/>
+              </radialGradient>
+            </defs>
+            <ellipse cx="160" cy="255" rx="120" ry="14" fill="url(#standGrad)"/>
+            <path d="M65,190 L65,240 C65,250 255,250 255,240 L255,190 Z" fill="url(#tier1Grad)"/>
+            <ellipse cx="160" cy="190" rx="95" ry="16" fill="url(#tier1Grad)"/>
+            <path d="M95,135 L95,182 C95,190 225,190 225,182 L225,135 Z" fill="url(#tier2Grad)"/>
+            <ellipse cx="160" cy="135" rx="65" ry="12" fill="url(#tier2Grad)"/>
+            <!-- Candles -->
+            <rect x="157" y="90" width="6" height="44" rx="2" fill="#ec4899"/>
+            <path d="M160,66 C154,73 154,78 160,82 C166,78 166,73 160,66 Z" fill="url(#sparkleFlame)"/>
+            <rect x="128" y="98" width="6" height="36" rx="2" fill="#c084fc"/>
+            <path d="M131,76 C126,82 126,86 131,90 C136,86 136,82 131,76 Z" fill="url(#sparkleFlame)"/>
+            <rect x="186" y="98" width="6" height="36" rx="2" fill="#38bdf8"/>
+            <path d="M189,76 C184,82 184,86 189,90 C194,86 194,82 189,76 Z" fill="url(#sparkleFlame)"/>
+          </svg>
+        </div>
+
+        <!-- Emotional & Fun Blessing Card -->
+        <div class="surprise-blessing-card">
+          <p class="grand-blessing-lines">
+            More happiness.<br>
+            More success.<br>
+            More memories.<br>
+            More reasons to smile. 🥳
+          </p>
+        </div>
+
+        <p style="font-family: var(--font-display); font-size: clamp(1.4rem, 3.2vw, 2.2rem); font-weight: 800; color: #db2777; margin-top: 20px;">
+          Have the BEST birthday ever! 🎂✨
+        </p>
+
+        <!-- Thambi Signature -->
+        <div class="surprise-thambi-tag">
+          — Your Thambi ❤️
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="surprise-actions-row">
+          <button id="replayCelebrationBtn" class="btn-modern-primary">
+            <span>✨ Celebrate Again (Confetti) ✨</span>
+          </button>
+          <a href="index.html" class="btn-modern-secondary">
+            <span>🏠 Back to Home</span>
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Rising Balloons Container -->
+    <div class="rising-balloons-screen" aria-hidden="true">
+      <div class="balloon-riser balloon-pink" style="left: 10%; animation-delay: 0.1s;"></div>
+      <div class="balloon-riser balloon-purple" style="left: 28%; animation-delay: 0.5s;"></div>
+      <div class="balloon-riser balloon-peach" style="left: 48%; animation-delay: 0.2s;"></div>
+      <div class="balloon-riser balloon-blue" style="left: 68%; animation-delay: 0.7s;"></div>
+      <div class="balloon-riser balloon-pink" style="left: 85%; animation-delay: 0.4s;"></div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

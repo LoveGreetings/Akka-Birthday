@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Little Message For You 💌 | Happy Birthday Akka</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .message-header {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Page Transition Curtain -->
+  <div class="page-transition-curtain"></div>
+
+  <!-- Background Animated Gradient Blobs -->
+  <div class="ambient-blobs" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="blob blob-4"></div>
+  </div>
+
+  <!-- Ambient Particles & Fireworks Canvases -->
+  <canvas id="particleCanvas"></canvas>
+  <canvas id="fireworkCanvas"></canvas>
+
+  <!-- Navigation Bar -->
+  <nav class="main-nav">
+    <a href="index.html" class="nav-brand">
+      <span class="nav-brand-icon">✨</span>
+      Akka's Day
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link">🏠 Home</a></li>
+      <li><a href="birthday.html" class="nav-link">🎂 Birthday</a></li>
+      <li><a href="message.html" class="nav-link active">💌 Message</a></li>
+      <li><a href="surprise.html" class="nav-link">🎁 Surprise</a></li>
+    </ul>
+
+    <button class="mobile-menu-btn" aria-label="Open Navigation Menu">☰</button>
+  </nav>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-backdrop"></div>
+  <div class="mobile-nav-drawer">
+    <button class="mobile-drawer-close" aria-label="Close Navigation Menu">✕</button>
+    <a href="index.html" class="nav-link">🏠 Home</a>
+    <a href="birthday.html" class="nav-link">🎂 Birthday</a>
+    <a href="message.html" class="nav-link active">💌 Message</a>
+    <a href="surprise.html" class="nav-link">🎁 Surprise</a>
+  </div>
+
+  <!-- Main Message Section -->
+  <main class="page-wrapper">
+    <div class="message-scroll-box">
+
+      <!-- Top Frame with Aesthetic Letter Badge -->
+      <div class="message-top-frame">
+        <span class="badge-pill">💛 From The Heart</span>
+
+        <!-- Live Date & Day Badge -->
+        <div>
+          <div class="today-date-badge">
+            <span class="live-date-text">📅 <strong>Tuesday, November 10</strong> • Akka's Special Day ✨</span>
+          </div>
+        </div>
+
+        <h1 class="title-large" style="font-size: clamp(1.8rem, 4vw, 2.8rem); margin-bottom: 15px;">
+          💌 A Little Message For You
+        </h1>
+        <div class="message-envelope-badge">
+          <div class="envelope-icon-wrap">
+            💌
+          </div>
+        </div>
+      </div>
+
+      <!-- Line-by-Line / Paragraph-by-Paragraph Reveal -->
+      <div class="message-content-area">
+
+        <p class="message-paragraph message-salutation">Akka,</p>
+
+        <p class="message-paragraph">
+          Today is your special day, and I just wanted to remind you how special you are as my sister.
+        </p>
+
+        <p class="message-paragraph">
+          We may fight, argue, tease each other, and annoy each other all the time 😂
+        </p>
+
+        <p class="message-paragraph" style="font-weight: 600; color: #8b5cf6;">
+          But those little moments are what make our bond special.
+        </p>
+
+        <p class="message-paragraph">
+          You’ve always been an important part of my life, and I’m genuinely lucky to have you as my Akka.
+        </p>
+
+        <p class="message-paragraph">
+          I hope this new year of your life brings you lots of happiness, success, good health, peaceful moments, and beautiful memories.
+        </p>
+
+        <p class="message-paragraph" style="font-weight: 600; color: #db2777;">
+          No matter where life takes us, you’ll always be my Akka.
+        </p>
+
+        <p class="message-paragraph" style="font-size: 1.35rem; font-weight: 700; color: #ec4899;">
+          Have an amazing birthday! 🎂🥳
+        </p>
+
+        <p class="message-paragraph" style="font-style: italic; color: #64748b; line-height: 2;">
+          Keep smiling.<br>
+          Keep shining.<br>
+          And enjoy your day! ✨
+        </p>
+
+        <div class="message-signoff">
+          — Your Thambi ❤️
+        </div>
+      </div>
+
+      <!-- Playful Closing & Next Surprise Trigger -->
+      <div class="message-closing-section">
+        <p style="font-size: 1.25rem; font-weight: 700; color: #8b5cf6; margin: 15px 0 8px;">
+          Okay… enough emotional stuff 😂
+        </p>
+        <p style="font-size: 1.15rem; color: #64748b; margin-bottom: 25px;">
+          Ready for the final surprise? 👀
+        </p>
+
+        <a href="surprise.html" class="btn-modern-primary">
+          <span>🎁 Open Final Surprise</span>
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

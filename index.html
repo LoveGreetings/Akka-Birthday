@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Akka! ✨ | A Special Surprise</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Intro Stagger Animations */
+    .intro-badge {
+      opacity: 0;
+      transform: translateY(15px);
+      animation: modernFadeIn 0.8s ease 0.2s forwards;
+    }
+    .intro-hey {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: modernFadeIn 0.9s ease 0.6s forwards;
+    }
+    .intro-special {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: modernFadeIn 0.9s ease 1.2s forwards;
+    }
+    .intro-title {
+      opacity: 0;
+      transform: scale(0.9);
+      animation: popInBounce 1s cubic-bezier(0.34, 1.56, 0.64, 1) 2s forwards;
+    }
+    .intro-gift-wrap {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: modernFadeIn 1s ease 2.6s forwards;
+    }
+    .intro-action-wrap {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: modernFadeIn 0.9s ease 3.2s forwards;
+      margin-top: 25px;
+    }
+
+    @keyframes modernFadeIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes popInBounce {
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Page Transition Curtain -->
+  <div class="page-transition-curtain"></div>
+
+  <!-- Background Animated Gradient Blobs -->
+  <div class="ambient-blobs" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="blob blob-4"></div>
+  </div>
+
+  <!-- Ambient Particles & Fireworks Canvases -->
+  <canvas id="particleCanvas"></canvas>
+  <canvas id="fireworkCanvas"></canvas>
+
+  <!-- Navigation Bar -->
+  <nav class="main-nav">
+    <a href="index.html" class="nav-brand">
+      <span class="nav-brand-icon">✨</span>
+      Akka's Day
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link active">🏠 Home</a></li>
+      <li><a href="birthday.html" class="nav-link">🎂 Birthday</a></li>
+      <li><a href="message.html" class="nav-link">💌 Message</a></li>
+      <li><a href="surprise.html" class="nav-link">🎁 Surprise</a></li>
+    </ul>
+
+    <button class="mobile-menu-btn" aria-label="Open Navigation Menu">☰</button>
+  </nav>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-backdrop"></div>
+  <div class="mobile-nav-drawer">
+    <button class="mobile-drawer-close" aria-label="Close Navigation Menu">✕</button>
+    <a href="index.html" class="nav-link active">🏠 Home</a>
+    <a href="birthday.html" class="nav-link">🎂 Birthday</a>
+    <a href="message.html" class="nav-link">💌 Message</a>
+    <a href="surprise.html" class="nav-link">🎁 Surprise</a>
+  </div>
+
+  <!-- Main Intro Content -->
+  <main class="page-wrapper">
+    <div class="glass-card">
+
+      <div class="intro-badge">
+        <span class="badge-pill">🎂 Special Edition For Akka</span>
+      </div>
+
+      <!-- Live Date & Day Badge -->
+      <div class="today-date-badge">
+        <span class="live-date-text">📅 <strong>Tuesday, November 10</strong> • Akka's Special Day ✨</span>
+      </div>
+
+      <div class="intro-hey">
+        <h2 style="font-size: 1.6rem; color: #8b5cf6; margin-bottom: 8px;">Hey Akka 👀</h2>
+      </div>
+
+      <div class="intro-special">
+        <p class="subtitle-modern" style="margin-bottom: 12px;">I made something special for you…</p>
+      </div>
+
+      <div class="intro-title">
+        <h1 class="title-large">🎂 HAPPY BIRTHDAY AKKA 🎂</h1>
+      </div>
+
+      <!-- Festive Balloons Party Image -->
+      <div class="festive-photo-frame">
+        <img src="assets/balloons.gif" alt="Birthday Balloons Celebration" class="festive-photo-img">
+      </div>
+
+      <!-- Animated Mystery Gift Box -->
+      <div class="intro-gift-wrap">
+        <div class="mystery-gift-box">
+          <svg class="gift-box-svg" viewBox="0 0 200 200">
+            <defs>
+              <linearGradient id="boxGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#f472b6"/>
+                <stop offset="50%" stop-color="#ec4899"/>
+                <stop offset="100%" stop-color="#db2777"/>
+              </linearGradient>
+              <linearGradient id="ribbonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#fef08a"/>
+                <stop offset="50%" stop-color="#fbbf24"/>
+                <stop offset="100%" stop-color="#f59e0b"/>
+              </linearGradient>
+              <linearGradient id="lidGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#fb7185"/>
+                <stop offset="100%" stop-color="#e11d48"/>
+              </linearGradient>
+            </defs>
+            <rect x="40" y="80" width="120" height="95" rx="16" fill="url(#boxGrad)"/>
+            <rect x="88" y="80" width="24" height="95" fill="url(#ribbonGrad)"/>
+            <rect x="32" y="62" width="136" height="26" rx="8" fill="url(#lidGrad)"/>
+            <rect x="88" y="62" width="24" height="26" fill="url(#ribbonGrad)"/>
+            <path d="M100,62 C85,35 60,35 75,55 C88,68 100,62 100,62 Z" fill="url(#ribbonGrad)"/>
+            <path d="M100,62 C115,35 140,35 125,55 C112,68 100,62 100,62 Z" fill="url(#ribbonGrad)"/>
+            <circle cx="100" cy="62" r="8" fill="#fef08a"/>
+            <polygon points="30,40 33,48 41,51 33,54 30,62 27,54 19,51 27,48" fill="#fbbf24"/>
+            <polygon points="170,110 172,116 178,118 172,120 170,126 168,120 162,118 168,116" fill="#fbbf24"/>
+          </svg>
+        </div>
+        <p style="font-size: 1.15rem; font-weight: 600; color: #475569; margin-top: 10px;">
+          Ready for your surprise? ✨
+        </p>
+      </div>
+
+      <!-- Let's Go Button -->
+      <div class="intro-action-wrap">
+        <a href="birthday.html" id="startSurpriseBtn" class="btn-modern-primary">
+          <span>✨ Let’s Go ✨</span>
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
